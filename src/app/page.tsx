@@ -27,10 +27,10 @@ export default function Home() {
               <span>DIVISI CYBERSECURITY RESMI PT SIVILIZE CORP INDONESIA</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] mb-6 uppercase">
-              Enterprise Cybersecurity That Protects Your Business <br className="hidden sm:block" />
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.12] mb-6 uppercase">
+              Keamanan Siber Enterprise. <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400">
-                Before Threats Become Incidents.
+                Lindungi Bisnis Anda Sebelum Ancaman Menjadi Insiden.
               </span>
             </h1>
 
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2. CORPORATE BACKGROUND & EKOSISTEM PT SIVILIZE CORP INDONESIA (POSISI UTAMA AWAL BERANDA) */}
+        {/* 2. CORPORATE BACKGROUND & EKOSISTEM PT SIVILIZE CORP INDONESIA */}
         <section className="py-20 border-b border-slate-800/60 bg-slate-900/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
