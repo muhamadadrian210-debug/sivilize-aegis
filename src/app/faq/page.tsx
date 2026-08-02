@@ -1,79 +1,69 @@
 "use client";
 
-import React, { useState } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { useState } from "react";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+
+const faqData = [
+  { q: "Apa itu Sivilize Aegis?", a: "Sivilize Aegis adalah divisi keamanan siber (Enterprise Cybersecurity) resmi di bawah PT SIVILIZE CORP INDONESIA yang berfokus pada pengamanan website, aplikasi, server, cloud, dan API perusahaan." },
+  { q: "Apakah Sivilize Aegis penyedia jasa pembuatan website?", a: "Bukan. Sivilize Aegis khusus berfokus pada audit keamanan, hardening server, mitigasi serangan (DDoS/WAF), dan penguatan infrastruktur siber enterprise." },
+  { q: "Apakah Sivilize Aegis toko penjual software antivirus?", a: "Bukan. Kami bukan penjual antivirus ritel. Kami adalah konsultansi dan penyedia solusi pengamanan infrastruktur digital berskala enterprise." },
+  { q: "Bagaimana jika organisasi kami tidak memiliki akses source code?", a: "Kami menyediakan Metode 1 (DNS & Reverse Proxy Protection) yang dapat mengamankan aplikasi Anda melalui lapisan WAF dan firewall perimeter tanpa perlu mengubah source code." },
+  { q: "Apakah implementasi keamanan akan menyebabkan sistem downtime?", a: "Untuk Metode 1, implementasi dapat dilakukan dengan zero downtime atau downtime minimal melalui pengalihan DNS secara halus." },
+  { q: "Apa itu Web Application Firewall (WAF)?", a: "WAF adalah lapisan perisai yang memfilter request HTTP/S masuk untuk memblokir serangan SQL Injection, XSS, dan bot jahat sebelum mencapai server utama Anda." },
+  { q: "Bagaimana cara Sivilize Aegis memitigasi serangan DDoS?", a: "Kami menggunakan infrastruktur penyaring trafik L3/L4/L7 yang mengisolasi trafik banjir jahat dan hanya meneruskan request resmi ke server Anda." },
+  { q: "Apakah data perusahaan kami dijamin kerahasiaannya?", a: "Ya. Seluruh kerja sama diikat secara hukum oleh dokumen Non-Disclosure Agreement (NDA) sah dari PT Sivilize Corp Indonesia." },
+  { q: "Apa perbedaan Metode 1 dan Metode 2?", a: "Metode 1 bekerja di level perimeter jaringan (DNS/Proxy) tanpa ubah kodingan. Metode 2 bekerja langsung mengamankan source code, autentikasi RBAC, dan server internal." },
+  { q: "Apakah Sivilize Aegis melayani rumah sakit dan SIMRS?", a: "Ya. Kami berpengalaman mengamankan sistem rekam medis elektronik (RME) dan integrasi BPJS/SATUSEHAT dari kejahatan kebocoran data." },
+  { q: "Apakah Sivilize Aegis melayani instansi pemerintah (E-Gov)?", a: "Ya. Kami mematuhi standar keamanan siber nasional dengan dukungan sertifikasi digital BSrE dan BSSN." },
+  { q: "Bagaimana proses penanganan insiden peretasan darurat (Incident Response)?", a: "Tim kami akan langsung mengisolasi server terinfeksi, melakukan pembersihan backdoor/web shell, dan memulihkan akses sistem secara aman." },
+  { q: "Apakah ada garansi Service Level Agreement (SLA)?", a: "Ya. Kami menyediakan jaminan SLA hingga 99.99% Uptime dan respon cepat sesuai paket langganan yang dipilih." },
+  { q: "Apakah kami mendapatkan laporan hasil audit keamanan?", a: "Ya. Setiap pengujian akan menghasilkan dokumen Laporan Vulnerability Assessment yang berisi rincian celah dan langkah perbaikannya." },
+  { q: "Apakah Sivilize Aegis melayani integrasi Autentikasi Wajah (Face Auth)?", a: "Ya. Kami melayani integrasi biometrik wajah untuk otorisasi akses tingkat tinggi pada sistem internal perusahaan." },
+  { q: "Apakah perbaikan keamanan bisa dilakukan secara berkala?", a: "Bisa. Kami menyediakan opsi langganan bulanan, 6 bulanan, dan 1 tahunan untuk pemantauan keamanan secara kontinu." },
+  { q: "Bagaimana jika developer lama kami sengaja menahan source code?", a: "Tim kami akan menggunakan pendekatan reverse proxy & perimeter WAF untuk mengisolasi server dari jangkauan tidak sah developer tersebut." },
+  { q: "Apakah Sivilize Aegis melayani keamanan cloud (AWS/GCP/Cloudflare)?", a: "Ya. Kami melayani audit IAM roles, enkripsi storage S3/GCS, dan pengerasan konfigurasi cloud security group." },
+  { q: "Bagaimana cara mengajukan proposal resmi (RFP)?", a: "Anda dapat mengisi Form Kontak atau menghubungi langsung COO Briand Jivencha Therik via WhatsApp di +62 851-3774-3321." },
+  { q: "Berapa lama estimasi waktu audit keamanan awal?", a: "Evaluasi awal arsitektur umumnya selesai dalam 1-3 hari kerja tergantung pada kompleksitas infrastruktur Anda." },
+];
 
 export default function FaqPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  const toggleFaq = (idx: number) => {
-    setOpenFaq(openFaq === idx ? null : idx);
-  };
-
-  const faqs = [
-    {
-      q: "Apakah saya harus membongkar atau membuat ulang website lama saya?",
-      a: "Sama sekali tidak. Aegis dirancang khusus untuk melindungi website atau aplikasi yang sudah berjalan (WordPress, Custom PHP, Laravel, Node.js). Cukup ubah DNS (Mode Shield) atau tempel 1 baris kode script (Mode Core)."
-    },
-    {
-      q: "Bagaimana jika vendor pembuatan website lama memegang source code kami?",
-      a: "Anda tetap dapat menggunakan Aegis Mode 1 (Aegis Shield DNS Proxy). Anda hanya perlu mengubah DNS Record di panel registrasi domain tanpa membutuhkan izin atau akses source code dari vendor lama."
-    },
-    {
-      q: "Apakah PT Sivilize Corp Indonesia melayani penerbitan MoU & Faktur Pajak?",
-      a: "Ya. PT Sivilize Corp Indonesia adalah entitas PT resmi. Kami melayani penerbitan MoU, kontrak SLA, invoice resmi, dan Faktur Pajak untuk keperluan sekolah, universitas, maupun BUMN."
-    },
-    {
-      q: "Apa yang terjadi jika masa langganan bulanan berakhir?",
-      a: "Sistem memberikan masa tenggang 7 hari disertai notifikasi WhatsApp. Jika tidak diperpanjang, proteksi akan dinonaktifkan secara aman dan trafik dikembalikan ke server asal tanpa merusak data Anda."
-    },
-    {
-      q: "Berapa lama proses pemasangan Sivilize Aegis?",
-      a: "Proses integrasi Mode 1 (DNS Reverse Proxy) memakan waktu 5-15 menit (propagasi DNS). Untuk Mode 2 (JS SDK), hanya butuh waktu 1 menit menyalin 1 baris kode ke bagian header website Anda."
-    },
-    {
-      q: "Apakah Sivilize Aegis memperlambat kecepatan loading website saya?",
-      a: "Tidak. Server Proxy Aegis menggunakan teknologi Edge Computing ultra-cepat dengan latency di bawah 15ms. Bahkan dalam banyak kasus, website Anda terasa lebih cepat karena ancaman bot dan scraping otomatis disaring di luar server utama Anda."
-    }
-  ];
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#05070c] text-slate-100 bg-grid-cyber relative overflow-hidden font-sans">
+    <div className="page-wrapper min-h-screen flex flex-col font-sans bg-[#090d16] text-slate-300">
       <Navbar />
 
-      <main className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-16 space-y-10">
-        <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono">
-            <HelpCircle className="w-3.5 h-3.5 text-cyan-400" /> FREQUENTLY ASKED QUESTIONS
+      <main className="flex-1 pt-36 pb-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center mb-16">
+            <span className="text-blue-400 text-xs font-mono tracking-widest uppercase block mb-2">// KNOWLEDGE_BASE_FAQ</span>
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight uppercase">20+ Pertanyaan Sering Diajukan</h1>
+            <p className="text-slate-400 text-sm mt-4">
+              Jawaban resmi mengenai layanan, metode, legalitas, dan prosedur kerja Sivilize Aegis.
+            </p>
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white">
-            Pertanyaan Sering Diajukan
-          </h1>
-          <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
-            Segala hal yang perlu Anda ketahui mengenai Sivilize Aegis dan layanan PT Sivilize Corp Indonesia.
-          </p>
-        </div>
 
-        <div className="space-y-4">
-          {faqs.map((item, idx) => (
-            <div key={idx} className="border border-slate-800 rounded-xl bg-[#0a0e17] overflow-hidden transition">
-              <button
-                onClick={() => toggleFaq(idx)}
-                className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-white hover:text-cyan-400 transition"
-              >
-                <span>{item.q}</span>
-                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform ${openFaq === idx ? "rotate-180 text-cyan-400" : ""}`} />
-              </button>
+          <div className="space-y-4">
+            {faqData.map((item, idx) => (
+              <div key={idx} className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+                <button
+                  onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                  className="w-full text-left font-bold text-white text-sm sm:text-base uppercase flex justify-between items-center gap-4 focus:outline-none"
+                >
+                  <span>[{String(idx + 1).padStart(2, "0")}] {item.q}</span>
+                  <span className="text-blue-400 font-mono text-lg">{openIdx === idx ? "−" : "+"}</span>
+                </button>
+                {openIdx === idx && (
+                  <div className="mt-4 pt-4 border-t border-slate-800/80 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
 
-              {openFaq === idx && (
-                <div className="px-5 pb-5 text-xs text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
-                  {item.a}
-                </div>
-              )}
-            </div>
-          ))}
         </div>
       </main>
 
