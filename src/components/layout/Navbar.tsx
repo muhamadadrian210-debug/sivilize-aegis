@@ -18,16 +18,13 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { label: "Overview", href: "/" },
     { label: "Layanan", href: "/layanan" },
     { label: "Metode", href: "/metode" },
     { label: "Tanpa Source Code", href: "/tanpa-source-code" },
-    { label: "Ancaman Bisnis", href: "/ancaman" },
-    { label: "Paket & SLA", href: "/harga" },
+    { label: "Paket & Harga", href: "/harga" },
+    { label: "Ancaman", href: "/ancaman" },
     { label: "Kepatuhan", href: "/kepatuhan" },
-    { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/faq" },
-    { label: "Kontak", href: "/kontak" },
   ];
 
   const emergencyWaMessage = encodeURIComponent(
@@ -50,14 +47,14 @@ export function Navbar() {
         }
         .aegis-nav {
           width: 100%;
-          max-width: 1320px;
-          height: 64px;
-          background: rgba(17, 24, 39, 0.85);
+          max-width: 1280px;
+          height: 60px;
+          background: rgba(17, 24, 39, 0.88);
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 9999px;
-          padding: 0 24px;
+          padding: 0 20px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -72,13 +69,14 @@ export function Navbar() {
         .brand-logo {
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 10px;
           text-decoration: none;
+          flex-shrink: 0;
         }
         .shield-emblem {
-          width: 34px;
-          height: 34px;
-          border-radius: 10px;
+          width: 32px;
+          height: 32px;
+          border-radius: 8px;
           background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
           border: 1px solid rgba(59, 130, 246, 0.4);
           display: flex;
@@ -87,13 +85,8 @@ export function Navbar() {
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
           transition: all 0.3s ease;
         }
-        .brand-logo:hover .shield-emblem {
-          transform: scale(1.05);
-          border-color: #3b82f6;
-          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
-        }
         .brand-logo-text {
-          font-size: 1.1rem;
+          font-size: 1.05rem;
           font-weight: 900;
           letter-spacing: 0.5px;
           color: #ffffff;
@@ -103,16 +96,17 @@ export function Navbar() {
           background: rgba(37, 99, 235, 0.15);
           color: #3b82f6;
           border: 1px solid rgba(37, 99, 235, 0.3);
-          font-size: 0.65rem;
+          font-size: 0.6rem;
           font-weight: 800;
-          padding: 2px 8px;
+          padding: 2px 7px;
           border-radius: 4px;
           letter-spacing: 0.5px;
+          white-space: nowrap;
         }
         .nav-links {
           display: flex;
           align-items: center;
-          gap: 16px;
+          gap: 20px;
           list-style: none;
           margin: 0;
           padding: 0;
@@ -120,7 +114,7 @@ export function Navbar() {
         .nav-link-a {
           color: #94a3b8;
           text-decoration: none;
-          font-size: 0.8rem;
+          font-size: 0.82rem;
           font-weight: 600;
           transition: all 0.2s;
           white-space: nowrap;
@@ -131,14 +125,15 @@ export function Navbar() {
         .nav-cta {
           background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
           color: #ffffff;
-          font-size: 0.8rem;
+          font-size: 0.78rem;
           font-weight: 800;
-          padding: 10px 20px;
+          padding: 9px 18px;
           border-radius: 9999px;
           text-decoration: none;
           transition: all 0.2s;
           white-space: nowrap;
           box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+          flex-shrink: 0;
         }
         .nav-cta:hover {
           transform: translateY(-1px);
@@ -161,7 +156,7 @@ export function Navbar() {
           border-radius: 2px;
           transition: all 0.2s;
         }
-        @media (max-width: 1150px) {
+        @media (max-width: 1100px) {
           .nav-links, .nav-cta {
             display: none;
           }
@@ -174,9 +169,8 @@ export function Navbar() {
       <div className={`aegis-nav-container ${isScrolled ? "aegis-nav--scrolled" : ""}`}>
         <nav className="aegis-nav">
           <Link href="/" className="brand-logo" aria-label="Sivilize Aegis Home">
-            {/* VECTOR SHIELD EMBLEM LOGO */}
             <div className="shield-emblem">
-              <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 3L4 7V16C4 23.5 9.5 29 16 31C22.5 29 28 23.5 28 16V7L16 3Z" stroke="url(#aegis_shield_grad)" strokeWidth="2.5" strokeLinejoin="round" />
                 <path d="M16 8L22 11V16C22 20.5 19 24.5 16 26C13 24.5 10 20.5 10 16V11L16 8Z" fill="url(#aegis_shield_inner)" opacity="0.85" />
                 <path d="M16 12V20M12 16H20" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
@@ -188,7 +182,7 @@ export function Navbar() {
                   </linearGradient>
                   <linearGradient id="aegis_shield_inner" x1="10" y1="8" x2="22" y2="26" gradientUnits="userSpaceOnUse">
                     <stop stopColor="#3B82F6" />
-                    <stop offset="1" stopColor="#1D4ED8" />
+                    <stop offset="1" stop-color="#1D4ED8" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -217,7 +211,7 @@ export function Navbar() {
             rel="noopener noreferrer" 
             className="nav-cta"
           >
-            🛡️ Security Assessment via COO WA
+            🛡️ Security Assessment (COO WA)
           </a>
 
           <button className="nav-burger" aria-label="Menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -241,6 +235,20 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/blog"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ color: pathname === "/blog" ? "#3b82f6" : "#fff", fontSize: "0.95rem", textDecoration: "none", fontWeight: 700, borderBottom: "1px solid rgba(255,255,255,0.05)", paddingBottom: "8px" }}
+          >
+            Blog
+          </Link>
+          <Link
+            href="/kontak"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ color: pathname === "/kontak" ? "#3b82f6" : "#fff", fontSize: "0.95rem", textDecoration: "none", fontWeight: 700, borderBottom: "1px solid rgba(255,255,255,0.05)", paddingBottom: "8px" }}
+          >
+            Kontak
+          </Link>
           <a
             href={`https://wa.me/6285137743321?text=${emergencyWaMessage}`}
             target="_blank"
