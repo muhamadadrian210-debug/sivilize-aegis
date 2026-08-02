@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "Security Assessment Audit",
     "BSrE BSSN Digital Certificate",
   ],
+  alternates: {
+    canonical: "./",
+  },
   authors: [{ name: "PT Sivilize Corp Indonesia" }],
   icons: {
     icon: "/icon.svg",
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Sivilize Aegis — Enterprise Cybersecurity & Infrastructure Hardening",
-    description: "Enterprise Cybersecurity That Protects Your Business Before Threats Become Incidents. PT Sivilize Corp Indonesia (NIB 0207260103661).",
+    description: "Keamanan Siber Enterprise. Lindungi Bisnis Anda Sebelum Ancaman Menjadi Insiden. PT Sivilize Corp Indonesia (NIB 0207260103661).",
     url: "https://aegis.sivilize.com",
     siteName: "Sivilize Aegis",
     images: [
