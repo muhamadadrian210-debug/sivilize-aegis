@@ -182,7 +182,7 @@ export function Navbar() {
                   </linearGradient>
                   <linearGradient id="aegis_shield_inner" x1="10" y1="8" x2="22" y2="26" gradientUnits="userSpaceOnUse">
                     <stop stopColor="#3B82F6" />
-                    <stop offset="1" stop-color="#1D4ED8" />
+                    <stop offset="1" stopColor="#1D4ED8" />
                   </linearGradient>
                 </defs>
               </svg>
