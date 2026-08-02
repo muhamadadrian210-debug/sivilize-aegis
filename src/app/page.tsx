@@ -16,7 +16,7 @@ export default function Home() {
       <main className="flex-1">
         
         {/* 1. HERO SECTION — ENTERPRISE CYBERSECURITY */}
-        <section className="relative pt-36 pb-20 md:pt-48 md:pb-32 border-b border-slate-800/60 overflow-hidden">
+        <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-slate-800/60 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] bg-blue-600/10 blur-[160px] rounded-full pointer-events-none" />
 
@@ -51,7 +51,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm px-8 py-4 rounded-xl shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-0.5"
               >
-                <span>🛡️ Konsultasi Gratis (COO WA Direct)</span>
+                <span>🛡️ Konsultasi Keamanan (COO WA Direct)</span>
               </a>
               <Link
                 href="/harga"
@@ -62,7 +62,7 @@ export default function Home() {
             </div>
 
             {/* LIVE SECURITY METRIC BAR */}
-            <div className="mt-16 p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-xl max-w-5xl mx-auto text-left">
+            <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-xl max-w-5xl mx-auto text-left">
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-slate-800 pb-4 mb-6 gap-4">
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1.5">
@@ -106,7 +106,106 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2. PROGRAM EARLY ADOPTER SECTION */}
+        {/* 2. CORPORATE BACKGROUND & EKOSISTEM PT SIVILIZE CORP INDONESIA (POSISI UTAMA AWAL BERANDA) */}
+        <section className="py-20 border-b border-slate-800/60 bg-slate-900/40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="text-blue-400 text-xs font-mono tracking-widest uppercase block mb-2">// CORPORATE_ENTITY_&_BACKGROUND</span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white uppercase tracking-tight">
+                Bagian Dari Ekosistem PT Sivilize Corp Indonesia
+              </h2>
+              <p className="text-slate-400 text-xs sm:text-sm mt-3">
+                Sivilize Aegis beroperasi secara sah sebagai pilar spesialis pertahanan siber & pengerasan infrastruktur digital terpisah di bawah badan hukum resmi perseroan.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+              
+              {/* LATAR BELAKANG PERUSAHAAN */}
+              <div className="lg:col-span-7 p-8 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
+                <h3 className="text-xl font-bold text-white mb-4 uppercase">Profil & Identitas Badan Hukum</h3>
+                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                  <strong>PT SIVILIZE CORP INDONESIA</strong> adalah induk perusahaan teknologi skala enterprise yang menaungi 3 pilar layanan utama: **SiWeb Production** (Digital Presence & Web UMKM), **Sivilize Software** (Custom Enterprise Software, ERP, SIMRS), dan **Sivilize Aegis** (Enterprise Cybersecurity & System Hardening).
+                </p>
+                <p className="text-slate-400 text-xs leading-relaxed mb-6">
+                  Setiap pengujian keamanan siber dan pendampingan audit oleh Sivilize Aegis dilindungi oleh instrumen hukum perseroan yang sah, dokumen *Non-Disclosure Agreement (NDA)*, serta kepatuhan pada standar akreditasi sertifikat digital resmi pemerintah.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+                  <div className="p-3.5 rounded-xl bg-[#070b12] border border-slate-800">
+                    <span className="text-slate-500 block text-[10px] mb-1">NIB KEMENKUMHAM</span>
+                    <strong className="text-blue-400 font-bold text-xs">0207260103661</strong>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-[#070b12] border border-slate-800">
+                    <span className="text-slate-500 block text-[10px] mb-1">KBLI PERIZINAN</span>
+                    <strong className="text-white font-bold text-xs">62199 Pemrograman</strong>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-[#070b12] border border-slate-800">
+                    <span className="text-slate-500 block text-[10px] mb-1">DIGITAL CERTIFICATE</span>
+                    <strong className="text-emerald-400 font-bold text-xs">BSrE / BSSN RI</strong>
+                  </div>
+                </div>
+              </div>
+
+              {/* DIREKSI & EXECUTIVE LEADERSHIP */}
+              <div className="lg:col-span-5 p-8 rounded-2xl bg-slate-900 border border-slate-800 relative shadow-xl">
+                <span className="text-xs font-mono text-blue-400 uppercase tracking-wider block mb-2">// EXECUTIVE_LEADERSHIP</span>
+                <h3 className="text-xl font-bold text-white mb-6 uppercase">Direksi & Penanggung Jawab Operasional</h3>
+                
+                <div className="p-5 rounded-xl bg-[#070b12] border border-blue-500/40 mb-5">
+                  <strong className="text-white font-bold text-base block">Briand Jivencha Therik</strong>
+                  <span className="text-blue-400 font-bold text-xs block mb-2">Chief Operating Officer (COO) — Sivilize Aegis</span>
+                  <p className="text-slate-400 text-xs leading-relaxed mb-4">
+                    Memimpin langsung eksekusi mitigasi insiden siber, evaluasi dokumen security audit, serta pengesahan NDA perseroan.
+                  </p>
+                  <a
+                    href={`https://wa.me/6285137743321?text=${emergencyWaMessage}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 py-2.5 px-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs transition-all"
+                  >
+                    💬 WA Direct COO: +62 851-3774-3321 &rarr;
+                  </a>
+                </div>
+
+                <div className="text-xs text-slate-400 leading-relaxed border-t border-slate-800 pt-4 font-mono">
+                  CEO: Muhamad Adrian | CFO: Hendrik Putra Hanas | CMO: Shatrya Dhimar
+                </div>
+              </div>
+
+            </div>
+
+            {/* 3 PILAR EKOSISTEM SIVILIZE CORP */}
+            <div className="p-8 rounded-2xl bg-[#070b12] border border-blue-500/30">
+              <span className="text-blue-400 text-xs font-mono tracking-widest uppercase block mb-2 text-center">// CORPORATE_ECOSYSTEM_TIERS</span>
+              <h3 className="text-xl font-bold text-white uppercase text-center mb-8">3 Pilar Utama Ekosistem PT Sivilize Corp Indonesia</h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-mono">
+                <div className="p-5 rounded-xl bg-slate-900 border border-slate-800">
+                  <span className="text-slate-500 block text-[10px] mb-1">01 / DIGITAL PRESENCE</span>
+                  <strong className="text-white font-bold text-sm block mb-2">SiWeb Production</strong>
+                  <p className="text-slate-400 font-sans leading-relaxed">Penyedia jasa pembuatan landing page, website UMKM, company profile, & sistem toko online WhatsApp.</p>
+                </div>
+
+                <div className="p-5 rounded-xl bg-slate-900 border border-slate-800">
+                  <span className="text-slate-500 block text-[10px] mb-1">02 / ENTERPRISE SOFTWARE</span>
+                  <strong className="text-white font-bold text-sm block mb-2">Sivilize Software</strong>
+                  <p className="text-slate-400 font-sans leading-relaxed">Pengembangan sistem software enterprise custom, ERP, CRM, SIMRS rumah sakit, & integrasi AI/ML.</p>
+                </div>
+
+                <div className="p-5 rounded-xl bg-slate-900 border border-blue-500/60 shadow-lg">
+                  <span className="text-blue-400 block text-[10px] mb-1">03 / CYBERSECURITY DIVISION</span>
+                  <strong className="text-white font-bold text-sm block mb-2">Sivilize Aegis</strong>
+                  <p className="text-slate-400 font-sans leading-relaxed">Pengawasan keamanan siber, WAF layer 7, mitigasi DDoS, hardening server, & incident response.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 3. PROGRAM EARLY ADOPTER SECTION */}
         <section className="py-16 border-b border-slate-800/60 bg-blue-950/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="p-8 sm:p-12 rounded-2xl bg-[#070b12] border-2 border-blue-500/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
@@ -135,7 +234,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. SECTION KHUSUS: TIDAK MEMILIKI SOURCE CODE? */}
+        {/* 4. SECTION KHUSUS: TIDAK MEMILIKI SOURCE CODE? */}
         <section className="py-20 border-b border-slate-800/60 bg-slate-900/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="p-8 sm:p-12 rounded-2xl bg-[#070b12] border-2 border-blue-500/40 shadow-2xl relative overflow-hidden">
@@ -170,7 +269,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. DUA METODE IMPLEMENTASI PERLINDUNGAN */}
+        {/* 5. DUA METODE IMPLEMENTASI PERLINDUNGAN */}
         <section className="py-20 border-b border-slate-800/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -251,7 +350,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. EXECUTIVE CONTACT BANNER (COO DIRECT WA) */}
+        {/* 6. EXECUTIVE CONTACT BANNER (COO DIRECT WA) */}
         <section className="py-20 bg-slate-900/40">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <div className="p-8 sm:p-12 rounded-2xl bg-[#070b12] border-2 border-blue-600/60 shadow-2xl relative overflow-hidden">
