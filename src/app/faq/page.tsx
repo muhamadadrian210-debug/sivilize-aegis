@@ -4,27 +4,32 @@ import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const faqData = [
+const faq25 = [
   { q: "Apa itu Sivilize Aegis?", a: "Sivilize Aegis adalah divisi keamanan siber (Enterprise Cybersecurity) resmi di bawah PT SIVILIZE CORP INDONESIA yang berfokus pada pengamanan website, aplikasi, server, cloud, dan API perusahaan." },
-  { q: "Apakah Sivilize Aegis penyedia jasa pembuatan website?", a: "Bukan. Sivilize Aegis khusus berfokus pada audit keamanan, hardening server, mitigasi serangan (DDoS/WAF), dan penguatan infrastruktur siber enterprise." },
+  { q: "Apakah Sivilize Aegis bagian resmi dari PT Sivilize Corp Indonesia?", a: "Ya, Sivilize Aegis beroperasi secara sah sebagai divisi khusus pengamanan siber yang terdaftar di Kemenkumham (NIB: 0207260103661, KBLI: 62199) serta diakreditasi sertifikat digital BSrE & BSSN." },
+  { q: "Apa itu Program Early Adopter Sivilize Aegis?", a: "Program Early Adopter dibuka untuk memberikan penawaran harga khusus lebih terjangkau bagi klien pertama yang ingin bergabung dalam perjalanan awal pengembangan layanan Sivilize Aegis tanpa mengurangi komitmen kualitas terbaik." },
+  { q: "Apakah Sivilize Aegis pembuat website biasa?", a: "Bukan. Pembuatan website ritel dan landing page ditangani oleh SiWeb Production. Sivilize Aegis khusus menangani audit keamanan siber, hardening server, WAF, mitigasi DDoS, dan Incident Response." },
   { q: "Apakah Sivilize Aegis toko penjual software antivirus?", a: "Bukan. Kami bukan penjual antivirus ritel. Kami adalah konsultansi dan penyedia solusi pengamanan infrastruktur digital berskala enterprise." },
-  { q: "Bagaimana jika organisasi kami tidak memiliki akses source code?", a: "Kami menyediakan Metode 1 (DNS & Reverse Proxy Protection) yang dapat mengamankan aplikasi Anda melalui lapisan WAF dan firewall perimeter tanpa perlu mengubah source code." },
-  { q: "Apakah implementasi keamanan akan menyebabkan sistem downtime?", a: "Untuk Metode 1, implementasi dapat dilakukan dengan zero downtime atau downtime minimal melalui pengalihan DNS secara halus." },
-  { q: "Apa itu Web Application Firewall (WAF)?", a: "WAF adalah lapisan perisai yang memfilter request HTTP/S masuk untuk memblokir serangan SQL Injection, XSS, dan bot jahat sebelum mencapai server utama Anda." },
-  { q: "Bagaimana cara Sivilize Aegis memitigasi serangan DDoS?", a: "Kami menggunakan infrastruktur penyaring trafik L3/L4/L7 yang mengisolasi trafik banjir jahat dan hanya meneruskan request resmi ke server Anda." },
-  { q: "Apakah data perusahaan kami dijamin kerahasiaannya?", a: "Ya. Seluruh kerja sama diikat secara hukum oleh dokumen Non-Disclosure Agreement (NDA) sah dari PT Sivilize Corp Indonesia." },
-  { q: "Apa perbedaan Metode 1 dan Metode 2?", a: "Metode 1 bekerja di level perimeter jaringan (DNS/Proxy) tanpa ubah kodingan. Metode 2 bekerja langsung mengamankan source code, autentikasi RBAC, dan server internal." },
-  { q: "Apakah Sivilize Aegis melayani rumah sakit dan SIMRS?", a: "Ya. Kami berpengalaman mengamankan sistem rekam medis elektronik (RME) dan integrasi BPJS/SATUSEHAT dari kejahatan kebocoran data." },
-  { q: "Apakah Sivilize Aegis melayani instansi pemerintah (E-Gov)?", a: "Ya. Kami mematuhi standar keamanan siber nasional dengan dukungan sertifikasi digital BSrE dan BSSN." },
-  { q: "Bagaimana proses penanganan insiden peretasan darurat (Incident Response)?", a: "Tim kami akan langsung mengisolasi server terinfeksi, melakukan pembersihan backdoor/web shell, dan memulihkan akses sistem secara aman." },
-  { q: "Apakah ada garansi Service Level Agreement (SLA)?", a: "Ya. Kami menyediakan jaminan SLA hingga 99.99% Uptime dan respon cepat sesuai paket langganan yang dipilih." },
-  { q: "Apakah kami mendapatkan laporan hasil audit keamanan?", a: "Ya. Setiap pengujian akan menghasilkan dokumen Laporan Vulnerability Assessment yang berisi rincian celah dan langkah perbaikannya." },
-  { q: "Apakah Sivilize Aegis melayani integrasi Autentikasi Wajah (Face Auth)?", a: "Ya. Kami melayani integrasi biometrik wajah untuk otorisasi akses tingkat tinggi pada sistem internal perusahaan." },
-  { q: "Apakah perbaikan keamanan bisa dilakukan secara berkala?", a: "Bisa. Kami menyediakan opsi langganan bulanan, 6 bulanan, dan 1 tahunan untuk pemantauan keamanan secara kontinu." },
-  { q: "Bagaimana jika developer lama kami sengaja menahan source code?", a: "Tim kami akan menggunakan pendekatan reverse proxy & perimeter WAF untuk mengisolasi server dari jangkauan tidak sah developer tersebut." },
-  { q: "Apakah Sivilize Aegis melayani keamanan cloud (AWS/GCP/Cloudflare)?", a: "Ya. Kami melayani audit IAM roles, enkripsi storage S3/GCS, dan pengerasan konfigurasi cloud security group." },
-  { q: "Bagaimana cara mengajukan proposal resmi (RFP)?", a: "Anda dapat mengisi Form Kontak atau menghubungi langsung COO Briand Jivencha Therik via WhatsApp di +62 851-3774-3321." },
-  { q: "Berapa lama estimasi waktu audit keamanan awal?", a: "Evaluasi awal arsitektur umumnya selesai dalam 1-3 hari kerja tergantung pada kompleksitas infrastruktur Anda." },
+  { q: "Bagaimana jika source code website kami ditahan developer lama?", a: "Kami menyediakan opsi DNS Protection (Metode 1) yang mengamankan aplikasi Anda melalui jaringan WAF dan reverse proxy perimeter tanpa membutuhkan akses source code sama sekali." },
+  { q: "Apa perbedaan DNS Protection dan Full Source Code Protection?", a: "DNS Protection bekerja di perimeter luar jaringan (tanpa ubah kodingan, deploy cepat). Full Source Code Protection bekerja hingga ke dalam kodingan aplikasi, review autentikasi, API, dan server." },
+  { q: "Kapan kami harus memilih paket DNS Protection?", a: "Pilihlah DNS Protection jika website Anda sudah aktif berjalan, butuh perlindungan DDoS/WAF instan, atau jika Anda tidak memiliki akses ke source code lama." },
+  { q: "Kapan kami harus memilih paket Full Source Code Protection?", a: "Pilihlah Full Source Code Protection jika organisasi Anda memiliki akses penuh ke source code dan ingin mengamankan alur login, otorisasi RBAC, API, dan CI/CD pipeline secara mendalam." },
+  { q: "Apakah implementasi DNS Protection akan membuat website down?", a: "Tidak. Pengalihan DNS dilakukan secara halus (graceful DNS propagation) dengan zero downtime atau gangguan minimal pada operasional." },
+  { q: "Apa itu WAF (Web Application Firewall)?", a: "WAF adalah penyaring trafik L7 yang secara otomatis memblokir perintah jahat seperti SQL Injection, XSS, dan bot peretas sebelum mencapai server Anda." },
+  { q: "Bagaimana Sivilize Aegis menahan serangan DDoS?", a: "Kami mengalihkan banjir trafik jahat L3/L4/L7 ke jaringan penyaring (scrubbing center) sehingga hanya trafik pelanggan resmi yang diteruskan ke server Anda." },
+  { q: "Apa itu SQL Injection dan cara mencegahnya?", a: "SQLi adalah penyisipan perintah database jahat via form web. Kami mencegahnya melalui aturan WAF dan rekomendasi prepared statements pada kodingan." },
+  { q: "Apa itu XSS (Cross-Site Scripting)?", a: "XSS adalah eksekusi script jahat di browser pengunjung lain. Kami mencegahnya dengan filtering input dan konfigurasi Content Security Policy (CSP)." },
+  { q: "Apa itu Credential Stuffing?", a: "Credential Stuffing adalah pencurian akun massal menggunakan daftar password bocor dari web lain. Kami mencegahnya dengan rate limiting dan bot challenge." },
+  { q: "Apa itu Ransomware dan bagaimana cara mencegahnya?", a: "Ransomware mengunci file server dan meminta tebusan. Kami mencegahnya dengan isolasi port, server hardening, dan strategi backup otomatis off-site." },
+  { q: "Apa itu Web Shell (Backdoor)?", a: "Web shell adalah script jahat yang disisipkan peretas untuk mengontrol server remote. Kami melakukan сканування dan pembersihan backdoor secara tuntas." },
+  { q: "Apakah ada perjanjian kerahasiaan data (NDA)?", a: "Ya. Setiap kerja sama diawali dengan penandatanganan dokumen Non-Disclosure Agreement (NDA) yang sah secara hukum Republik Indonesia." },
+  { q: "Apakah dokumen legalitas PT Sivilize Corp sah secara hukum?", a: "Ya. Terdaftar resmi di Kemenkumham RI dengan NIB 0207260103661, NPWP 1000 0000 1032 4212, serta sertifikat digital resmi dari BSSN." },
+  { q: "Apakah sertifikat BSrE dan BSSN sudah terekam?", a: "Sertifikat perizinan ditandatangani secara elektronik oleh Balai Sertifikasi Elektronik (BSrE) & BSSN." },
+  { q: "Berapa lama proses Security Assessment awal?", a: "Evaluasi awal arsitektur umumnya selesai dalam 1-3 hari kerja tergantung pada kompleksitas sistem Anda." },
+  { q: "Apakah kami mendapatkan laporan audit tertulis?", a: "Ya. Setiap audit menghasilkan Laporan Vulnerability Assessment resmi berisi temuan celah dan langkah mitigasinya." },
+  { q: "Bagaimana alur langganan bulanan vs tahunan?", a: "Langganan bulanan memberikan kelenturan tanpa komitmen lama. Langganan tahunan memberikan harga spesial Early Adopter yang jauh lebih hemat." },
+  { q: "Bagaimana cara klaim Incident Response darurat?", a: "Hubungi langsung hotline darurat COO kami atau kirim Form Kontak untuk respon penanganan darurat dalam waktu < 15 menit." },
+  { q: "Siapa penanggung jawab operasional di Sivilize Aegis?", a: "Chief Operating Officer (COO) Briand Jivencha Therik memimpin langsung koordinasi operasional dan audit penanganan insiden siber." },
 ];
 
 export default function FaqPage() {
@@ -39,14 +44,14 @@ export default function FaqPage() {
           
           <div className="text-center mb-16">
             <span className="text-blue-400 text-xs font-mono tracking-widest uppercase block mb-2">// KNOWLEDGE_BASE_FAQ</span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight uppercase">20+ Pertanyaan Sering Diajukan</h1>
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight uppercase">25 FAQ Keamanan Siber</h1>
             <p className="text-slate-400 text-sm mt-4">
-              Jawaban resmi mengenai layanan, metode, legalitas, dan prosedur kerja Sivilize Aegis.
+              Jawaban resmi mengenai layanan, metode, Program Early Adopter, legalitas, dan prosedur kerja Sivilize Aegis.
             </p>
           </div>
 
           <div className="space-y-4">
-            {faqData.map((item, idx) => (
+            {faq25.map((item, idx) => (
               <div key={idx} className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
                 <button
                   onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
