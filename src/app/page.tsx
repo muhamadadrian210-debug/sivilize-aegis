@@ -16,20 +16,20 @@ export default function Home() {
       <main className="flex-1">
         
         {/* 1. HERO SECTION — ENTERPRISE CYBERSECURITY */}
-        <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 border-b border-slate-800/60 overflow-hidden">
+        <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 border-b border-slate-800/60 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] bg-blue-600/10 blur-[160px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[800px] h-[300px] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-slate-900/90 border border-blue-500/30 text-blue-400 text-[11px] font-mono tracking-wider mb-6 shadow-2xl backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span>DIVISI CYBERSECURITY RESMI PT SIVILIZE CORP INDONESIA</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-blue-500/30 text-blue-400 text-[10px] font-mono tracking-wide mb-4 shadow-xl backdrop-blur-md max-w-full text-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse shrink-0" />
+              <span className="truncate">Sivilize Aegis — PT Sivilize Corp Indonesia</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.12] mb-6 uppercase">
-              Keamanan Siber Enterprise. <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400">
+            <h1 className="text-xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight mb-4">
+              Keamanan Siber Enterprise.{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400 block sm:inline mt-1 sm:mt-0">
                 Lindungi Bisnis Anda Sebelum Ancaman Menjadi Insiden.
               </span>
             </h1>

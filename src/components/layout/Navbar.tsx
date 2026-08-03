@@ -164,6 +164,21 @@ export function Navbar() {
             display: flex;
           }
         }
+        @media (max-width: 640px) {
+          .aegis-nav-container {
+            padding: 10px 12px;
+          }
+          .aegis-nav {
+            height: 52px;
+            padding: 0 14px;
+          }
+          .brand-badge {
+            display: none;
+          }
+          .brand-logo-text {
+            font-size: 0.88rem;
+          }
+        }
       `}</style>
 
       <div className={`aegis-nav-container ${isScrolled ? "aegis-nav--scrolled" : ""}`}>
