@@ -182,23 +182,23 @@ export default function Home() {
               <h3 className="text-xl font-bold text-white uppercase text-center mb-8">3 Pilar Utama Ekosistem PT Sivilize Corp Indonesia</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-mono">
-                <div className="p-5 rounded-xl bg-slate-900 border border-slate-800">
+                <a href="https://sivilizecorp.my.id" target="_blank" rel="noopener noreferrer" className="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-all block">
                   <span className="text-slate-500 block text-[10px] mb-1">01 / DIGITAL PRESENCE</span>
-                  <strong className="text-white font-bold text-sm block mb-2">SiWeb Production</strong>
-                  <p className="text-slate-400 font-sans leading-relaxed">Penyedia jasa pembuatan landing page, website UMKM, company profile, & sistem toko online WhatsApp.</p>
-                </div>
+                  <strong className="text-white font-bold text-sm block mb-2">SiWeb Production &rarr;</strong>
+                  <p className="text-slate-400 font-sans leading-relaxed">Penyedia jasa pembuatan landing page, website UMKM, company profile, &amp; sistem toko online WhatsApp.</p>
+                </a>
 
-                <div className="p-5 rounded-xl bg-slate-900 border border-slate-800">
+                <a href="https://software.sivilizecorp.com" target="_blank" rel="noopener noreferrer" className="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-all block">
                   <span className="text-slate-500 block text-[10px] mb-1">02 / ENTERPRISE SOFTWARE</span>
-                  <strong className="text-white font-bold text-sm block mb-2">Sivilize Software</strong>
-                  <p className="text-slate-400 font-sans leading-relaxed">Pengembangan sistem software enterprise custom, ERP, CRM, SIMRS rumah sakit, & integrasi AI/ML.</p>
-                </div>
+                  <strong className="text-white font-bold text-sm block mb-2">Sivilize Software &rarr;</strong>
+                  <p className="text-slate-400 font-sans leading-relaxed">Pengembangan sistem software enterprise custom, ERP, CRM, SIMRS rumah sakit, &amp; integrasi AI/ML.</p>
+                </a>
 
-                <div className="p-5 rounded-xl bg-slate-900 border border-blue-500/60 shadow-lg">
+                <a href="https://aegis.sivilizecorp.com" target="_blank" rel="noopener noreferrer" className="p-5 rounded-xl bg-slate-900 border border-blue-500/60 shadow-lg hover:border-blue-400 transition-all block">
                   <span className="text-blue-400 block text-[10px] mb-1">03 / CYBERSECURITY DIVISION</span>
-                  <strong className="text-white font-bold text-sm block mb-2">Sivilize Aegis</strong>
-                  <p className="text-slate-400 font-sans leading-relaxed">Pengawasan keamanan siber, WAF layer 7, mitigasi DDoS, hardening server, & incident response.</p>
-                </div>
+                  <strong className="text-white font-bold text-sm block mb-2">Sivilize Aegis &rarr;</strong>
+                  <p className="text-slate-400 font-sans leading-relaxed">Pengawasan keamanan siber, WAF layer 7, mitigasi DDoS, hardening server, &amp; incident response.</p>
+                </a>
               </div>
             </div>
 
